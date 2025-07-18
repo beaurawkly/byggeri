@@ -1,99 +1,359 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="scripts/js.js"></script>
-<style type="text/css">
-	#constructionimages {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.images {
-		width: 22vw;
-		height: 36vh;
-		background-size: cover;
-		margin: 1vw;
-	}
-	#image-one {
-		background-image: url("Pics/construction-1.jpg");
-	}
-	#image-two {
-		background-image: url("Pics/construction-2.jpg");
-	}
-	#image-three {
-		background-image: url("Pics/construction-3.jpg");
-	}
-	#image-four {
-		background-image: url("Pics/construction-4.jpg");
-	}
-	#image-five {
-		background-image: url("Pics/construction-5.jpg");
-	}
-	#image-six {
-		background-image: url("Pics/construction-6.jpg");
-	}
-	#image-seven {
-		background-image: url("Pics/construction-7.jpg");
-	}
-	#image-eight {
-		background-image: url("Pics/construction-8.jpg");
-	}
-	.images p {
-		display: none;
-	}
-	#menu ul {
-		list-style: none;
-	}
-	#menu ul li {
-		display: inline;
-		text-transform: uppercase;
-	margin-right: 3vw;
-	}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byggeri Construction - Building Excellence Since 1987</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>Byggeri Construction [ Portfolio ]</title>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+			height: 15vh;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: #D2691E;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .hero {
+            background: url('Pics/construction-1.jpg') no-repeat center center;
+            background-size: cover;
+            background-position: center;
+			background-attachment: fixed; /* Parallax effect */
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #D2691E;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #A0522D;
+        }
+
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2C3E50;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .about {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: #2C3E50;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .founders {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .founder-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .founder-photo {
+            width: 150px;
+            height: 150px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .projects {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+		#project-card-1{
+			background-color: #2c3e50;
+			background-image: url("Pics/construction-2.jpg");
+			background-size: cover;
+  			background-blend-mode: multiply;
+		}
+		#project-card-2{
+			background-color: #2c3e50;
+			background-image: url("Pics/construction-3.jpg");
+			background-size: cover;
+  			background-blend-mode: multiply;
+		}
+		#project-card-3{
+			background-color: #2c3e50;
+			background-image: url("Pics/construction-4.jpg");
+			background-size: cover;
+  			background-blend-mode: multiply;
+		}
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #D2691E, #A0522D);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .contact {
+            padding: 80px 0;
+            background: #2C3E50;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #D2691E;
+        }
+
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .highlight {
+            color: #D2691E;
+            font-weight: bold;
+        }
+		.about-image {
+			height: 300px;
+			background: url('Pics/construction-7.jpg') no-repeat center center;
+			background-size: cover;
+			background-color: #A0522D;
+			background-blend-mode: multiply;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-size: 1.5rem;
+			font-weight: bold;
+			border-radius: 10px;
+		}
+
+		@media (max-width: 1200px) {
+			.container {
+				padding: 0 15px;
+			}
+
+			.header-content {
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+		}
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .logo-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-	<div id="logo">Byggeri  Construction
-	</div>
-	<h1>Byggeri Construction</h1>
-	<div id="menu">
-		<ul>
-			<li class="border"><a href="index.php" class='active' >Work</a></li>
-			<li class="border"><a href="contact.php"  >Contact</a></li>
-			<li class="border"><a href="about.php"  >About</a></li>
-		</ul>
-	</div>
-	<div id="constructionimages">
-		<div id='image-one' class="images">
-			<a href='item.php?id=10'><p>Site</p></a>
-		</div>
-		<div id='image-two' class="images">
-			<a href='item.php?id=11'><p>Site</p></a>
-		</div>
-		<div id='image-three' class="images">
-			<a href='item.php?id=12'><p>Site</p></a>
-		</div>
-		<div id='image-four' class="images">
-			<a href='item.php?id=13'><p>Site</p></a>
-		</div>
-		<div id='image-five' class="images">
-			<a href='item.php?id=20'><p>Site</p></a>
-		</div>
-		<div id='image-six' class="images">
-			<a href='item.php?id=15'><p>Site</p></a>
-		</div>
-		<div id='image-seven' class="images">
-			<a href='item.php?id=16'><p>Site</p></a>
-		</div>
-		<div id='image-eight' class="images">
-			<a href='item.php?id=17'><p>Site</p></a>
-		</div>
-		<div class="clear">&nbsp;</div>
-
-<!--
+	<!--
 888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 888888888888888888888888888888888888888888888888888888888888888888888888888888888888
@@ -108,44 +368,153 @@
 88888888888888888888888888-8888888888888888888888888-8888888888888888888888888888888
 888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="Pics/byggeri_logo.svg" alt="Byggeri Construction Logo" class="logo">
+                    <!-- <div class="logo-text">
+                        <h1>BYGGERI</h1>
+                        <p>Construction Excellence</p>
+                    </div> -->
+                </div>
+                <div class="contact-info">
+                    <p>📞 (212) 555-0123</p>
+                    <p>📧 info@byggericonstruction.com</p>
+                    <p>📍 New York City, NY</p>
+                </div>
+            </div>
+        </div>
+    </header>
 
-	</div>
-	<div id="footer">
-		<div class="footercol">
-			<h3>&copy; 2011 Byggeri Construction</h3>
-			<p>All images and content are property of Byggeri Construction. For questions or permissions contact me.</p>
-		</div>
-		<div class="footercol">
-			<h3>Contact</h3>
-			<p>Like what you see? Are you ready to hire? Or just interested? Send me an email and we can get to work. e : questions@vandelay.com</p>
-		</div>
-		<div class="footercol">
-			<h3>Site Links</h3>
-			<p><a href="index.php">Portfolio</a> <a href="contact.php">Contact</a> <a href="about.php">About</a> <a href="portfolio.pdf" target="_blank">Downloadable Portfolio</a> </p>
-		</div>
-		<div class="clear">&nbsp;</div>
+    <section class="hero">
+        <div class="container">
+            <h2>Building Excellence Since 1987</h2>
+            <p>From humble beginnings to becoming one of New York City's most trusted construction companies, we bring Danish craftsmanship and innovative building techniques to every project.</p>
+            <a href="#contact" class="btn">Get Your Free Quote</a>
+        </div>
+    </section>
 
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Residential Construction</h3>
+                    <p>Custom homes, renovations, and additions built with precision and care. From small projects to luxury mansions in the Hamptons.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Buildings</h3>
+                    <p>Office buildings, retail spaces, and commercial complexes designed for modern business needs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Innovative Concrete Solutions</h3>
+                    <p>Pioneering <span class="highlight">sound-wave concrete hardening technology</span> for superior strength and durability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	</div>
-</div>
-	<script language="javascript" type="text/javascript">
-	
-	$('.fade').mouseover(function() {
-		
-		$(this).fadeTo('fast', 1, function() {
-			// Animation complete.
-		});
-		
-	});
-	
-	$('.fade').mouseout(function() {
-		
-		$(this).fadeTo('fast', .75, function() {
-			// Animation complete.
-		});
-		
-	});
-	
-</script>
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About Byggeri Construction</h3>
+                    <p>Founded in 1987, Byggeri Construction represents the perfect blend of traditional Danish craftsmanship and cutting-edge building technology. Our name "Byggeri" means "construction" in Danish, honoring our founder's heritage.</p>
+                    <p>We've built our reputation on quality, reliability, and innovation. From small renovation projects to major commercial developments, we never compromise on our standards.</p>
+                    <p>Our <span class="highlight">proprietary sound-wave concrete technology</span> sets us apart, allowing us to create structures that are both beautiful and exceptionally durable.</p>
+                </div>
+                <div class="about-image">
+                    <div >
+                        37 Years of Friendship<br>
+                        15 Years of Partnership
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="founders">
+        <div class="container">
+            <h2 class="section-title">Our Founders</h2>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-photo">AT</div>
+                    <h3>Anders Toleman</h3>
+                    <p><strong>Co-Founder & Innovation Director</strong></p>
+                    <p>With a passion for sound and acoustics, Anders discovered groundbreaking methods for using sound waves to enhance concrete strength. His Danish heritage brings traditional craftsmanship values to every project.</p>
+                    <p><em>"The beauty of construction lies in how sound moves through materials."</em></p>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-photo">TG</div>
+                    <h3>Tony Guido</h3>
+                    <p><strong>Co-Founder & Operations Director</strong></p>
+                    <p>Tony's lifelong passion for building and keen eye for detail ensure every project meets the highest standards. He oversees all construction operations and maintains our reputation for excellence.</p>
+                    <p><em>"Quality construction is built on trust and attention to detail."</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" id="project-card-1">Luxury Hamptons Estate</div>
+                    <div class="project-content">
+                        <h3>Hamptons Masterpiece</h3>
+                        <p>A stunning modern mansion featuring clean lines and our innovative concrete technology. This project established our reputation among high-end clients.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" id="project-card-2">Commercial Complex</div>
+                    <div class="project-content">
+                        <h3>NYC Commercial Center</h3>
+                        <p>A state-of-the-art office complex in Manhattan showcasing our advanced building techniques and commitment to sustainable construction.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" id="project-card-3">Residential Development</div>
+                    <div class="project-content">
+                        <h3>Brooklyn Heights Residences</h3>
+                        <p>Luxury residential units combining modern amenities with classic New York architecture, all built with our superior concrete technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p>(212) 555-0123</p>
+                    <p>Available 24/7 for emergencies</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>info@byggericonstruction.com</p>
+                    <p>We respond within 24 hours</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Office</h4>
+                    <p>123 Construction Avenue<br>New York, NY 10001</p>
+                    <p>Monday - Friday: 7 AM - 6 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Byggeri Construction. All rights reserved. | Licensed & Insured | NYC Construction License #BC-2024-001</p>
+        </div>
+    </footer>
 </body>
 </html>
